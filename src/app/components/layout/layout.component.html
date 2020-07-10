@@ -1,0 +1,38 @@
+<app-header [navbarBrandRouterLink]="['/dashboard']" [fixed]="true">
+    <ul class="nav navbar-nav d-md-down-none">
+        <li class="nav-item px-3">
+            <a class="nav-link" href="#">Dashboard</a>
+        </li>
+
+    </ul>
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item d-md-down-none">
+            <a class="nav-link" href="#"><i class="icon-bell"></i><span
+                    class="badge badge-pill badge-danger">5</span></a>
+        </li>
+
+
+        <li class="nav-item dropdown" dropdown placement="bottom right">
+            <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+                dropdownToggle (click)="false">
+                <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com" />
+            </a>
+
+        </li>
+    </ul>
+</app-header>
+
+<div class="app-body">
+    <app-sidebar #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized"
+        (click)="toggleMinimize($event)">
+        <app-sidebar-nav [navItems]="navItems"></app-sidebar-nav>
+        <app-sidebar-minimizer></app-sidebar-minimizer>
+    </app-sidebar>
+    <!-- Main content -->
+    <main class="main">
+        <div class="container-fluid">
+            <router-outlet></router-outlet>
+        </div><!-- /.container-fluid -->
+    </main>
+
+</div>

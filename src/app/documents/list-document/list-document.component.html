@@ -1,0 +1,86 @@
+<div class="animated fadeIn">
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Search</strong>
+                </div>
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-center mb-6">
+
+                        <div class="form-group" style="padding: 10px;">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                </div>
+                                <input class="form-control" name="username" placeholder="Search" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="padding: 10px;">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                </div>
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group" style="padding: 10px;">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                                </div>
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-center mb-6">
+                        <div class="form-group" style="padding: 10px;">
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-search"></i>
+                                    Search</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Created Date</th>
+                                <th>Assigned To</th>
+                                <th>Assigned On</th>
+                                <th>Current Status</th>
+                                <th>Action</th>
+                                <th>File</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let doc of documents; let i = index;">
+                                <td>{{i+1}}</td>
+                                <td>{{ doc.CreatedDate }}</td>
+                                <td> {{ doc.AssignedTo }} </td>
+                                <td>{{ doc.AssignedOn }}</td>
+                                <td> {{ doc.CurrentStatus }} </td> 
+                                <th><button type="button" (click)="onRemove(i)" class="btn btn-sm btn-danger">
+                                        <i class="fa fa-close"></i> Delete
+                                    </button></th>
+                                <td>View</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
