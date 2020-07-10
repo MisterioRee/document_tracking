@@ -32,7 +32,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <label for="lastName">Employee</label>
+                                        <label for="lastName">Employee Email</label>
                                         <input type="email" class="form-control" id="lastName"
                                             placeholder="Employee Email" value="" required="">
                                     </div>
@@ -43,28 +43,38 @@
                                         <div class="btn-group" dropdown>
                                             <button id="button-basic" dropdownToggle type="button"
                                                 class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
-                                                Department <span class="caret"></span>
+                                                <div *ngIf="employee.department; then depIf else depElse"> </div>
+                                                <ng-template #depIf>{{employee.department.name}}</ng-template>
+                                                <ng-template #depElse> Department</ng-template>
+                                                <span class="caret"></span>
                                             </button>
                                             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu"
                                                 aria-labelledby="button-basic">
-                                                <li role="menuitem"> Action </li>
-                                                <li role="menuitem"> Another action</li>
-                                                <li role="menuitem"> Another action</li>                                                
+                                                <li role="menuitem" *ngFor="let department of deparments; let i=index;">
+                                                    <div class="dropdown-item handy-mouse"
+                                                        (click)="onChangeDepartment(i)"> {{ department.name }} </div>
+                                                </li>
                                             </ul>
                                         </div>
 
 
                                     </div>
-                                    <div class="col-md-6 mb-3"> 
+                                    <div class="col-md-6 mb-3">
                                         <div class="btn-group" dropdown>
                                             <button id="button-basic" dropdownToggle type="button"
                                                 class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
-                                                Access Level <span class="caret"></span>
+                                                <div *ngIf="employee.role; then accessLeveIf else accessLevelElse">
+                                                </div>
+                                                <ng-template #accessLeveIf>{{employee.role.role}}</ng-template>
+                                                <ng-template #accessLevelElse> Access Level</ng-template>
+                                                <span class="caret"></span>
                                             </button>
                                             <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu"
-                                                aria-labelledby="button-basic"> 
-                                                <li role="menuitem"> Admin </li>
-                                                <li role="menuitem"> Employee</li>                                                
+                                                aria-labelledby="button-basic">
+                                                <li role="menuitem" *ngFor="let role of roles; let i = index;">
+                                                    <div class="dropdown-item handy-mouse" (click)="onChangeRole(i)">
+                                                        {{role.role}} </div>
+                                                </li>
                                             </ul>
                                         </div>
 

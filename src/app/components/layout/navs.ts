@@ -19,6 +19,11 @@ export const navItems: INavData[] = [
     icon: 'fa fa-book'
   },
   {
+    name: 'Add Task',
+    url: '/home/add-task',
+    icon: 'fa fa-check'
+  },
+  {
     name: 'List Documents',
     url: '/home/list-document',
     icon: 'fa fa-search'
@@ -48,14 +53,15 @@ export const navItems: INavData[] = [
  
     ]
   },
-  {
-    name: 'Disabled',
-    url: '/dashboard',
-    icon: 'icon-ban',
-    badge: {
-      variant: 'secondary',
-      text: 'NEW'
-    },
-    attributes: { disabled: true },
-  }
+
+  // {
+  //   name: 'Assign Document',
+  //   url: '/dashboard',
+  //   icon: 'icon-ban',
+  //   badge: {
+  //     variant: 'secondary',
+  //     text: 'NEW'
+  //   },
+  //   attributes: { disabled: true },
+  // }
 ];

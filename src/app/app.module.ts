@@ -28,6 +28,7 @@ import { AddDocumentComponent } from './documents/add-document/add-document.comp
 import { ListDocumentComponent } from './documents/list-document/list-document.component';
 import { AddEmployeeComponent } from './employee/add-employee/add-employee.component';
 import { AddDepartmentComponent } from './employee/add-department/add-department.component';
+import { AddTaskComponent } from './employee/add-task/add-task.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
       { path: 'list-document', component: ListDocumentComponent },
       { path: 'add-employee', component: AddEmployeeComponent },
       { path: 'add-department', component: AddDepartmentComponent },
+      { path: 'add-task', component: AddTaskComponent }
 
     ]
   }
@@ -55,6 +57,7 @@ const routes: Routes = [
     ListDocumentComponent,
     AddEmployeeComponent,
     AddDepartmentComponent,
+    AddTaskComponent,
   ],
   imports: [
     BrowserModule,
